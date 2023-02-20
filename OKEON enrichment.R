@@ -23,7 +23,7 @@ for(i in 1:length(target.call.files)){
     print(background.noise.files[j])
     this.wave <- mix.equal.length(target.call.files[i], 
                                   background.noise.files[j], 
-                                  0.5)
+                                  0.7)
     if(!is.na(this.wave)){
       if(runif(1) < test.prop){
         writeWave(this.wave, paste0(test.dir, "target_", i, "_", j, ".wav" ))   
@@ -41,7 +41,7 @@ for(i in 1:length(nontarget.call.files)){
     print(background.noise.files[j])
     this.wave <- mix.equal.length(nontarget.call.files[i], 
                                   background.noise.files[j], 
-                                  0.5)
+                                  0.7)
     if(!is.na(this.wave)){
       if(runif(1) < test.prop){
         writeWave(this.wave, paste0(test.dir, "nontarget_", i, "_", j, ".wav" ))   

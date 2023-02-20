@@ -8,8 +8,10 @@ mix.equal.length <- function(sig.path, noise.path, ratio){
   noise = tuneR::readWave(noise.path)
   
   # Normalize both inputs
-  sig2 <- normalize(sig, unit = "16", pcm = TRUE, rescale = TRUE)
-  noise <- normalize(noise, unit = "16", pcm = TRUE, rescale = TRUE)
+  sig2 <- normalize(sig, unit = "16", pcm = TRUE, 
+                    rescale = TRUE, center = TRUE)
+  noise <- normalize(noise, unit = "16", pcm = TRUE, 
+                     rescale = TRUE, center = TRUE)
   
   if(length(sig) > length(noise)){
     print("Background noise file must be longer than signal!")
